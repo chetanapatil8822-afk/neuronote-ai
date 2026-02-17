@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-gray-900 transition-colors duration-300;
+}
+
+.dark body {
+  @apply text-gray-100;
+}
+
+/* Light background */
+html:not(.dark) body {
+  @apply bg-gray-50;
+}
+
+/* Dark background with subtle glow */
+html.dark body {
+  background: radial-gradient(circle at top, #1f2937, #0f172a);
+}
