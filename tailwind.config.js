@@ -1,24 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: "class",
+  darkMode: 'class', // <-- must be 'class' for toggle
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        background: {
-          light: "#f8fafc",
-          dark: "#0f172a",
-        },
-        primary: {
-          DEFAULT: "#6366f1",
-          hover: "#4f46e5",
-        },
-        glass: "rgba(255,255,255,0.08)",
-      },
-    },
+    extend: {},
   },
   plugins: [],
-};
+}
