@@ -1,5 +1,5 @@
 function Dashboard() {
-  return <h1 className="text-3xl font-bold">Dashboard Page</h1>;
+  return <h2 className="text-2xl font-bold">Dashboard Page</h2>;
 }
 
 export default Dashboard;

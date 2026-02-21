@@ -8,7 +8,10 @@ export default function Sidebar({ darkMode, setDarkMode }) {
   const navLinks = [
     { name: "Dashboard", path: "/dashboard" },
     { name: "Upload", path: "/upload" },
+    { name: "Mind Map", path: "/mindmap" },
+    { name: "Data Tables", path: "/data-tables" },
     { name: "Chat", path: "/chat" },
+    { name: "Flashcards", path: "/flashcards" },
     { name: "Quiz", path: "/quiz" },
     { name: "Analytics", path: "/analytics" },
     { name: "History", path: "/history" },
