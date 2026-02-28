@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import DashboardLayout from "./layout/DashboardLayout";
 
 import Dashboard from "./pages/Dashboard";
@@ -15,6 +15,10 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<DashboardLayout />}>
+        
+        {/* 👇 Default page */}
+        <Route index element={<Dashboard />} />
+
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="upload" element={<Upload />} />
         <Route path="mindmap" element={<MindMap />} />
