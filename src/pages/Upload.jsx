@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {
   FiUploadCloud,
   FiFileText,
@@ -6,12 +6,15 @@ import {
   FiCopy,
   FiRefreshCw,
 } from "react-icons/fi";
+import { StudyContext } from "../context/StudyContext";
 
 function Upload() {
   const [file, setFile] = useState(null);
   const [summary, setSummary] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const { setPdfText } = useContext(StudyContext);
 
   const handleFileChange = (e) => {
     const selected = e.target.files[0];
@@ -29,12 +32,26 @@ function Upload() {
     setSummary("");
   };
 
+  // 🔥 UPDATED PART
+  const handleUpload = () => {
+    if (!file) return;
+
+    const dummyText = `
+      Data Structures include Arrays, Linked List, Stack, Queue, Trees, Graphs.
+      Algorithms include Sorting, Searching, Recursion.
+    `;
+
+    setPdfText(dummyText);
+  };
+
   const handleGenerate = () => {
     if (!file) return;
 
     setLoading(true);
 
-    // Fake delay to simulate AI processing
+    // Save dummy PDF text to context
+    handleUpload();
+
     setTimeout(() => {
       setSummary(
         "This is a sample AI-generated summary of your uploaded document. It highlights key concepts, important insights, and provides a concise overview for faster understanding."
@@ -54,7 +71,7 @@ function Upload() {
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
           PDF Upload & AI Summary
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 mt-2">
+        <p className="text-gray-500 dark:text-gray-300 mt-1">
           Upload your PDF document and generate an AI-powered summary.
         </p>
       </div>

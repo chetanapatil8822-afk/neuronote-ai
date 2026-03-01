@@ -19,3 +19,15 @@ html:not(.dark) body {
 html.dark body {
   background: radial-gradient(circle at top, #1f2937, #0f172a);
 }
+
+/* ===================================== */
+/* 🔥 Custom 3D Flip Utilities */
+/* ===================================== */
+
+.perspective {
+  perspective: 1000px;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
